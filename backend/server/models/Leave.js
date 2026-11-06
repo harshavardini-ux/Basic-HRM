@@ -1,8 +1,3 @@
-// ============================================================================
-// Leave Mongoose Model
-// Handles employee leave applications, approvals and status updates
-// ============================================================================
-
 import { createModelWrapper } from './modelAdapter.js';
 
 export const leaveSchemaDef = {

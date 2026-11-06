@@ -1,13 +1,6 @@
-// ============================================================================
-// Announcement Controller
-// Handles campus/company wide notice board bulletins
-// ============================================================================
-
 import { Announcement } from '../models/Announcement.js';
 
-// @desc    Get all announcements
-// @route   GET /api/announcements
-// @access  Private
+
 export const getAnnouncements = async (req, res) => {
   try {
     let announcements = await Announcement.find();
@@ -23,9 +16,7 @@ export const getAnnouncements = async (req, res) => {
   }
 };
 
-// @desc    Create announcement
-// @route   POST /api/announcements
-// @access  Private (Admin, HR Manager)
+
 export const createAnnouncement = async (req, res) => {
   try {
     const { title, content, priority = 'Normal' } = req.body;
@@ -55,9 +46,7 @@ export const createAnnouncement = async (req, res) => {
   }
 };
 
-// @desc    Delete announcement
-// @route   DELETE /api/announcements/:id
-// @access  Private (Admin, HR Manager)
+
 export const deleteAnnouncement = async (req, res) => {
   try {
     const { id } = req.params;

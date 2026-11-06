@@ -1,8 +1,3 @@
-// ============================================================================
-// Department Mongoose Model
-// Manages organizational departments and divisions
-// ============================================================================
-
 import { createModelWrapper } from './modelAdapter.js';
 
 export const departmentSchemaDef = {

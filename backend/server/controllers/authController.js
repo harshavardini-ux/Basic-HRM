@@ -1,9 +1,3 @@
-// ============================================================================
-// Auth Controller
-// Handles user registration, login, profile, and initial seed data
-// Uses bcrypt for secure password hashing and jsonwebtoken for JWT auth
-// ============================================================================
-
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/User.js';
@@ -21,9 +15,7 @@ const generateToken = (id, role) => {
   return jwt.sign({ id, role }, JWT_SECRET, { expiresIn: '7d' });
 };
 
-// @desc    Register a new user
-// @route   POST /api/auth/register
-// @access  Public
+
 export const register = async (req, res) => {
   try {
     const { name, email, password, role = 'Employee', department = 'General' } = req.body;
@@ -195,9 +187,7 @@ export const getProfile = async (req, res) => {
   }
 };
 
-// @desc    Seed initial demo data for testing & demonstration
-// @route   POST /api/auth/seed
-// @access  Public
+
 export const seedInitialData = async (req, res) => {
   try {
     const existingUsers = await User.find();

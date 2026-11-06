@@ -1,9 +1,3 @@
-// ============================================================================
-// User Mongoose Model
-// Used for Authentication and Role-based Access Control (RBAC)
-// Roles: Admin, HR Manager, Employee
-// ============================================================================
-
 import { createModelWrapper } from './modelAdapter.js';
 
 export const userSchemaDef = {

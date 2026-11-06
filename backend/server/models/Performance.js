@@ -1,8 +1,3 @@
-// ============================================================================
-// Performance Mongoose Model
-// Manages periodic employee performance reviews and ratings
-// ============================================================================
-
 import { createModelWrapper } from './modelAdapter.js';
 
 export const performanceSchemaDef = {

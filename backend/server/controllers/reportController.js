@@ -1,8 +1,3 @@
-// ============================================================================
-// Report Controller
-// Generates summary dashboard statistics, analytics, and departmental reports
-// ============================================================================
-
 import { Employee } from '../models/Employee.js';
 import { Department } from '../models/Department.js';
 import { Attendance } from '../models/Attendance.js';
@@ -10,9 +5,6 @@ import { Leave } from '../models/Leave.js';
 import { Performance } from '../models/Performance.js';
 import { User } from '../models/User.js';
 
-// @desc    Get comprehensive HRM analytics & summary report
-// @route   GET /api/reports/summary
-// @access  Private (All authenticated roles)
 export const getSummaryStats = async (req, res) => {
   try {
     const employees = await Employee.find();

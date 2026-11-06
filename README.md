@@ -2,6 +2,11 @@
 ### Enterprise Full-Stack MERN Platform
 **Architecture:** React 19, Express.js, MongoDB / Mongoose, JWT Security, Tailwind CSS
 
+## 📁 Project Structure
+- **`frontend/`**: React application, pages, components, and Vite configuration.
+- **`backend/`**: Express server, API routes, controllers, models, and database setup.
+- Root-level package and environment files are shared by both folders.
+
 ---
 
 ## 📌 Platform Overview & Scope

@@ -1,8 +1,3 @@
-// ============================================================================
-// Announcement Mongoose Model
-// Manages organization-wide and department announcements
-// ============================================================================
-
 import { createModelWrapper } from './modelAdapter.js';
 
 export const announcementSchemaDef = {

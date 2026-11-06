@@ -1,7 +1,3 @@
-// ============================================================================
-// Authentication & Role-Based Authorization Middleware
-// Verifies JWT token and enforces Role-Based Access Control (RBAC)
-// ============================================================================
 
 import jwt from 'jsonwebtoken';
 import { User } from '../models/User.js';

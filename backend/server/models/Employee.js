@@ -1,8 +1,3 @@
-// ============================================================================
-// Employee Mongoose Model
-// Manages complete employee profile records
-// ============================================================================
-
 import { createModelWrapper } from './modelAdapter.js';
 
 export const employeeSchemaDef = {

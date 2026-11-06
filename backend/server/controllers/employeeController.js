@@ -1,14 +1,6 @@
-// ============================================================================
-// Employee Controller
-// Handles CRUD operations, searching, filtering, pagination, and sorting
-// ============================================================================
-
 import { Employee } from '../models/Employee.js';
 import { Department } from '../models/Department.js';
 
-// @desc    Get all employees with search, filter, pagination & sorting
-// @route   GET /api/employees
-// @access  Private (Admin, HR Manager, Employee)
 export const getAllEmployees = async (req, res) => {
   try {
     const { 
@@ -77,9 +69,6 @@ export const getAllEmployees = async (req, res) => {
   }
 };
 
-// @desc    Get single employee by ID
-// @route   GET /api/employees/:id
-// @access  Private
 export const getEmployeeById = async (req, res) => {
   try {
     const employee = await Employee.findById(req.params.id);
@@ -92,9 +81,6 @@ export const getEmployeeById = async (req, res) => {
   }
 };
 
-// @desc    Create new employee profile
-// @route   POST /api/employees
-// @access  Private (Admin, HR Manager)
 export const createEmployee = async (req, res) => {
   try {
     const {
@@ -193,9 +179,6 @@ export const updateEmployee = async (req, res) => {
   }
 };
 
-// @desc    Delete employee record
-// @route   DELETE /api/employees/:id
-// @access  Private (Admin only)
 export const deleteEmployee = async (req, res) => {
   try {
     const { id } = req.params;

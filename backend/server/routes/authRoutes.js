@@ -1,7 +1,3 @@
-// ============================================================================
-// Auth Routes (/api/auth)
-// ============================================================================
-
 import express from 'express';
 import { register, login, getProfile, seedInitialData } from '../controllers/authController.js';
 import { protect } from '../middleware/authMiddleware.js';

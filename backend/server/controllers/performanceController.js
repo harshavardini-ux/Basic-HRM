@@ -1,14 +1,6 @@
-// ============================================================================
-// Performance Controller
-// Handles employee performance appraisals, rating reviews, and evaluations
-// ============================================================================
-
 import { Performance } from '../models/Performance.js';
 import { Employee } from '../models/Employee.js';
 
-// @desc    Get all performance reviews
-// @route   GET /api/performance
-// @access  Private (Admin, HR Manager)
 export const getAllReviews = async (req, res) => {
   try {
     const { rating = '', search = '', period = '' } = req.query;
@@ -47,9 +39,6 @@ export const getAllReviews = async (req, res) => {
   }
 };
 
-// @desc    Get current user's performance evaluations
-// @route   GET /api/performance/my
-// @access  Private (Employee)
 export const getMyReviews = async (req, res) => {
   try {
     const employeeId = req.user.employeeId;
@@ -66,9 +55,6 @@ export const getMyReviews = async (req, res) => {
   }
 };
 
-// @desc    Add a performance appraisal review
-// @route   POST /api/performance
-// @access  Private (Admin, HR Manager)
 export const createReview = async (req, res) => {
   try {
     const {
@@ -113,9 +99,6 @@ export const createReview = async (req, res) => {
   }
 };
 
-// @desc    Update performance review
-// @route   PUT /api/performance/:id
-// @access  Private (Admin, HR Manager)
 export const updateReview = async (req, res) => {
   try {
     const { id } = req.params;
@@ -135,9 +118,6 @@ export const updateReview = async (req, res) => {
   }
 };
 
-// @desc    Delete performance review
-// @route   DELETE /api/performance/:id
-// @access  Private (Admin only)
 export const deleteReview = async (req, res) => {
   try {
     const { id } = req.params;

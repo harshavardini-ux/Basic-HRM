@@ -1,8 +1,3 @@
-// ============================================================================
-// Employee Routes (/api/employees)
-// Enforces role-based permissions for employee CRUD operations
-// ============================================================================
-
 import express from 'express';
 import {
   getAllEmployees,

@@ -1,7 +1,3 @@
-// ============================================================================
-// Announcement Routes (/api/announcements)
-// ============================================================================
-
 import express from 'express';
 import {
   getAnnouncements,

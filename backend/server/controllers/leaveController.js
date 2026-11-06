@@ -1,14 +1,6 @@
-// ============================================================================
-// Leave Controller
-// Handles leave applications, approvals, status reviews, and employee requests
-// ============================================================================
-
 import { Leave } from '../models/Leave.js';
 import { Employee } from '../models/Employee.js';
 
-// @desc    Get all leave applications (Search, Status Filter, Pagination)
-// @route   GET /api/leaves
-// @access  Private (Admin, HR Manager)
 export const getAllLeaves = async (req, res) => {
   try {
     const { status = '', search = '', page = 1, limit = 10 } = req.query;
@@ -50,9 +42,6 @@ export const getAllLeaves = async (req, res) => {
   }
 };
 
-// @desc    Get leave requests for current logged in user
-// @route   GET /api/leaves/my
-// @access  Private (Employee)
 export const getMyLeaves = async (req, res) => {
   try {
     const employeeId = req.user.employeeId;
@@ -69,9 +58,6 @@ export const getMyLeaves = async (req, res) => {
   }
 };
 
-// @desc    Apply for a new leave
-// @route   POST /api/leaves
-// @access  Private (All authenticated users)
 export const applyLeave = async (req, res) => {
   try {
     const { leaveType, startDate, endDate, numberOfDays, reason } = req.body;

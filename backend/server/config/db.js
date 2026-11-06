@@ -1,11 +1,3 @@
-// ============================================================================
-// Database Configuration (Mongoose / MongoDB Atlas with Resilient Fallback)
-// Connects to MongoDB Atlas using Mongoose if available.
-// If no MONGODB_URI is provided or if Atlas IP is not reachable, it
-// automatically runs with file-backed persistence so the
-// application is 100% functional, responsive, and error-free.
-// ============================================================================
-
 import mongoose from 'mongoose';
 import fs from 'fs';
 import path from 'path';

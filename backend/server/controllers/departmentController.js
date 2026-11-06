@@ -1,14 +1,7 @@
-// ============================================================================
-// Department Controller
-// Handles department CRUD operations and headcount updates
-// ============================================================================
-
 import { Department } from '../models/Department.js';
 import { Employee } from '../models/Employee.js';
 
-// @desc    Get all departments with calculated employee counts
-// @route   GET /api/departments
-// @access  Private
+
 export const getAllDepartments = async (req, res) => {
   try {
     const departments = await Department.find();
@@ -33,9 +26,7 @@ export const getAllDepartments = async (req, res) => {
   }
 };
 
-// @desc    Create new department
-// @route   POST /api/departments
-// @access  Private (Admin, HR Manager)
+
 export const createDepartment = async (req, res) => {
   try {
     const { name, code, headOfDepartment = '', description = '' } = req.body;
@@ -74,9 +65,7 @@ export const createDepartment = async (req, res) => {
   }
 };
 
-// @desc    Update department
-// @route   PUT /api/departments/:id
-// @access  Private (Admin, HR Manager)
+
 export const updateDepartment = async (req, res) => {
   try {
     const { id } = req.params;
@@ -96,9 +85,7 @@ export const updateDepartment = async (req, res) => {
   }
 };
 
-// @desc    Delete department
-// @route   DELETE /api/departments/:id
-// @access  Private (Admin only)
+
 export const deleteDepartment = async (req, res) => {
   try {
     const { id } = req.params;

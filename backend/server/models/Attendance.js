@@ -1,8 +1,3 @@
-// ============================================================================
-// Attendance Mongoose Model
-// Tracks employee daily attendance, clock-in, clock-out and status
-// ============================================================================
-
 import { createModelWrapper } from './modelAdapter.js';
 
 export const attendanceSchemaDef = {

@@ -11,20 +11,20 @@ import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
 
 // Database connection
-import { connectDB, getDbStatus } from './src/server/config/db.js';
+import { connectDB, getDbStatus } from './server/config/db.js';
 
 // Route handlers
-import authRoutes from './src/server/routes/authRoutes.js';
-import employeeRoutes from './src/server/routes/employeeRoutes.js';
-import departmentRoutes from './src/server/routes/departmentRoutes.js';
-import attendanceRoutes from './src/server/routes/attendanceRoutes.js';
-import leaveRoutes from './src/server/routes/leaveRoutes.js';
-import performanceRoutes from './src/server/routes/performanceRoutes.js';
-import announcementRoutes from './src/server/routes/announcementRoutes.js';
-import reportRoutes from './src/server/routes/reportRoutes.js';
+import authRoutes from './server/routes/authRoutes.js';
+import employeeRoutes from './server/routes/employeeRoutes.js';
+import departmentRoutes from './server/routes/departmentRoutes.js';
+import attendanceRoutes from './server/routes/attendanceRoutes.js';
+import leaveRoutes from './server/routes/leaveRoutes.js';
+import performanceRoutes from './server/routes/performanceRoutes.js';
+import announcementRoutes from './server/routes/announcementRoutes.js';
+import reportRoutes from './server/routes/reportRoutes.js';
 
 // Auto-seed helper
-import { seedInitialData } from './src/server/controllers/authController.js';
+import { seedInitialData } from './server/controllers/authController.js';
 
 dotenv.config();
 
@@ -87,6 +87,7 @@ async function startServer() {
   // 6. Vite Integration in Development
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
+      configFile: path.resolve(__dirname, '../frontend/vite.config.ts'),
       server: { middlewareMode: true },
       appType: 'spa',
     });
@@ -94,9 +95,9 @@ async function startServer() {
     console.log('[Server] Vite middleware mounted in development mode');
   } else {
     // Production static serving
-    app.use(express.static(path.resolve(__dirname, 'dist')));
+    app.use(express.static(path.resolve(__dirname, '../frontend/dist')));
     app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+      res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
     });
   }
 

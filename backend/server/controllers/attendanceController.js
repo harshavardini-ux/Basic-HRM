@@ -1,14 +1,5 @@
-// ============================================================================
-// Attendance Controller
-// Handles daily check-ins, clock-outs, attendance logs, and status updates
-// ============================================================================
-
 import { Attendance } from '../models/Attendance.js';
-import { Employee } from '../models/Employee.js';
 
-// @desc    Get attendance records (with date filter, status filter, search, pagination)
-// @route   GET /api/attendance
-// @access  Private (Admin, HR Manager)
 export const getAttendance = async (req, res) => {
   try {
     const { 
@@ -80,9 +71,6 @@ export const getMyAttendance = async (req, res) => {
   }
 };
 
-// @desc    Mark attendance (Clock In or Clock Out)
-// @route   POST /api/attendance/mark
-// @access  Private (All authenticated roles)
 export const markAttendance = async (req, res) => {
   try {
     const { action = 'clock-in', remarks = '' } = req.body;
@@ -149,9 +137,6 @@ export const markAttendance = async (req, res) => {
   }
 };
 
-// @desc    Admin or HR manual attendance status override
-// @route   PUT /api/attendance/:id
-// @access  Private (Admin, HR Manager)
 export const updateAttendance = async (req, res) => {
   try {
     const { id } = req.params;

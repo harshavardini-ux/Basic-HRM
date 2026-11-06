@@ -1,9 +1,3 @@
-// ============================================================================
-// Model Adapter Helper
-// Seamlessly delegates to Mongoose Model when connected to MongoDB Atlas,
-// or executes on file-backed persistent array with identical Mongoose semantics.
-// ============================================================================
-
 import mongoose from 'mongoose';
 import { isInMemoryMode, memoryStore, persistDiskStorage } from '../config/db.js';
 
