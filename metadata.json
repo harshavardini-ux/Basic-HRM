@@ -1,0 +1,6 @@
+{
+  "name": "Basic HRM - College Internal Project",
+  "description": "Full-stack MERN Basic Human Resource Management system with role-based access for Admin, HR Manager, and Employee, complete with CRUD, attendance, leaves, and performance reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
