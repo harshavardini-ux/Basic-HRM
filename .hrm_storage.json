@@ -1,0 +1,318 @@
+{
+  "users": [
+    {
+      "_id": "mem_1793949236029_1lf9u",
+      "name": "Dr. Rajesh Sharma (Admin)",
+      "email": "admin@hrm.edu",
+      "password": "$2b$10$pE2SNmQR9akefadmGXppXOINXvjQSyyQoVLqoIG78IeSTB4Q0MjPK",
+      "role": "Admin",
+      "department": "Management",
+      "employeeId": "ADM001",
+      "createdAt": "2026-11-06T07:13:56.029Z",
+      "updatedAt": "2026-11-06T07:13:56.030Z"
+    },
+    {
+      "_id": "mem_1793949236030_l6mpa",
+      "name": "Priya Iyer (HR Lead)",
+      "email": "hr@hrm.edu",
+      "password": "$2b$10$pE2SNmQR9akefadmGXppXO7xlJnhBfbxMVw2qkaW3o1rLQzREEdLO",
+      "role": "HR Manager",
+      "department": "Human Resources",
+      "employeeId": "HRM001",
+      "createdAt": "2026-11-06T07:13:56.030Z",
+      "updatedAt": "2026-11-06T07:13:56.030Z"
+    },
+    {
+      "_id": "mem_1793949236030_sx7wf",
+      "name": "Aarav Patel (Developer)",
+      "email": "employee@hrm.edu",
+      "password": "$2b$10$pE2SNmQR9akefadmGXppXOWspPVXOUEWoelnAvqc.VM8B4fnjaDeW",
+      "role": "Employee",
+      "department": "Engineering",
+      "employeeId": "EMP101",
+      "createdAt": "2026-11-06T07:13:56.030Z",
+      "updatedAt": "2026-11-06T07:13:56.030Z"
+    }
+  ],
+  "employees": [
+    {
+      "_id": "mem_1793949236031_f111m",
+      "employeeId": "EMP101",
+      "fullName": "Aarav Patel",
+      "email": "employee@hrm.edu",
+      "phone": "9845012345",
+      "department": "Engineering",
+      "designation": "Full Stack Developer",
+      "joiningDate": "2024-02-15",
+      "salary": 58000,
+      "status": "Active",
+      "address": "Plot 42, HSR Layout, Sector 2",
+      "emergencyContact": "Father - 9845000001",
+      "createdAt": "2026-11-06T07:13:56.031Z",
+      "updatedAt": "2026-11-06T07:13:56.031Z"
+    },
+    {
+      "_id": "mem_1793949236031_n71cp",
+      "employeeId": "EMP102",
+      "fullName": "Ananya Deshmukh",
+      "email": "ananya@hrm.edu",
+      "phone": "9845023456",
+      "department": "Engineering",
+      "designation": "Frontend React Engineer",
+      "joiningDate": "2024-03-01",
+      "salary": 54000,
+      "status": "Active",
+      "address": "Flat 304, Green Meadows",
+      "emergencyContact": "Mother - 9845000002",
+      "createdAt": "2026-11-06T07:13:56.031Z",
+      "updatedAt": "2026-11-06T07:13:56.031Z"
+    },
+    {
+      "_id": "mem_1793949236031_csyx4",
+      "employeeId": "HRM001",
+      "fullName": "Priya Iyer",
+      "email": "hr@hrm.edu",
+      "phone": "9845034567",
+      "department": "Human Resources",
+      "designation": "Senior HR Manager",
+      "joiningDate": "2023-08-10",
+      "salary": 72000,
+      "status": "Active",
+      "address": "Villa 12, Palm Residency",
+      "emergencyContact": "Spouse - 9845000003",
+      "createdAt": "2026-11-06T07:13:56.031Z",
+      "updatedAt": "2026-11-06T07:13:56.031Z"
+    },
+    {
+      "_id": "mem_1793949236032_mk2y4",
+      "employeeId": "ADM001",
+      "fullName": "Dr. Rajesh Sharma",
+      "email": "admin@hrm.edu",
+      "phone": "9845045678",
+      "department": "Management",
+      "designation": "Head of Operations & Admin",
+      "joiningDate": "2022-01-05",
+      "salary": 95000,
+      "status": "Active",
+      "address": "Tower A, Executive Enclave",
+      "emergencyContact": "Spouse - 9845000004",
+      "createdAt": "2026-11-06T07:13:56.032Z",
+      "updatedAt": "2026-11-06T07:13:56.032Z"
+    },
+    {
+      "_id": "mem_1793949236032_l6ze5",
+      "employeeId": "EMP103",
+      "fullName": "Rohan Verma",
+      "email": "rohan.v@hrm.edu",
+      "phone": "9845056789",
+      "department": "Marketing & Sales",
+      "designation": "Growth Marketing Executive",
+      "joiningDate": "2024-05-20",
+      "salary": 46000,
+      "status": "On Leave",
+      "address": "B-12, Sunrise Apartments",
+      "emergencyContact": "Brother - 9845000005",
+      "createdAt": "2026-11-06T07:13:56.032Z",
+      "updatedAt": "2026-11-06T07:13:56.032Z"
+    }
+  ],
+  "departments": [
+    {
+      "_id": "mem_1793949236030_3mwue",
+      "name": "Engineering",
+      "code": "ENG",
+      "headOfDepartment": "Vikram Malhotra",
+      "description": "Core software development, product architecture, and DevOps.",
+      "totalEmployees": 4,
+      "createdAt": "2026-11-06T07:13:56.031Z",
+      "updatedAt": "2026-11-06T07:13:56.031Z"
+    },
+    {
+      "_id": "mem_1793949236031_tsg3t",
+      "name": "Human Resources",
+      "code": "HR",
+      "headOfDepartment": "Priya Iyer",
+      "description": "Talent recruitment, employee relations, onboarding, and payroll.",
+      "totalEmployees": 2,
+      "createdAt": "2026-11-06T07:13:56.031Z",
+      "updatedAt": "2026-11-06T07:13:56.031Z"
+    },
+    {
+      "_id": "mem_1793949236031_uii9j",
+      "name": "Finance & Accounts",
+      "code": "FIN",
+      "headOfDepartment": "Suresh Menon",
+      "description": "Corporate budgeting, financial auditing, payroll accounting, and fiscal planning.",
+      "totalEmployees": 2,
+      "createdAt": "2026-11-06T07:13:56.031Z",
+      "updatedAt": "2026-11-06T07:13:56.031Z"
+    },
+    {
+      "_id": "mem_1793949236031_db5mg",
+      "name": "Marketing & Sales",
+      "code": "MKT",
+      "headOfDepartment": "Neha Gupta",
+      "description": "Brand promotion, digital marketing, client acquisition, and PR.",
+      "totalEmployees": 3,
+      "createdAt": "2026-11-06T07:13:56.031Z",
+      "updatedAt": "2026-11-06T07:13:56.031Z"
+    }
+  ],
+  "attendances": [
+    {
+      "_id": "mem_1793949236032_zue6k",
+      "employeeId": "EMP101",
+      "employeeName": "Aarav Patel",
+      "date": "2026-11-06",
+      "checkInTime": "09:12 AM",
+      "checkOutTime": "--:--",
+      "status": "Present",
+      "remarks": "Clocked in on campus",
+      "createdAt": "2026-11-06T07:13:56.032Z",
+      "updatedAt": "2026-11-06T07:13:56.032Z"
+    },
+    {
+      "_id": "mem_1793949236032_f5fro",
+      "employeeId": "EMP102",
+      "employeeName": "Ananya Deshmukh",
+      "date": "2026-11-06",
+      "checkInTime": "09:45 AM",
+      "checkOutTime": "--:--",
+      "status": "Late",
+      "remarks": "Traffic delay reported",
+      "createdAt": "2026-11-06T07:13:56.032Z",
+      "updatedAt": "2026-11-06T07:13:56.032Z"
+    },
+    {
+      "_id": "mem_1793949236032_aa30q",
+      "employeeId": "HRM001",
+      "employeeName": "Priya Iyer",
+      "date": "2026-11-06",
+      "checkInTime": "08:58 AM",
+      "checkOutTime": "--:--",
+      "status": "Present",
+      "remarks": "Early arrival",
+      "createdAt": "2026-11-06T07:13:56.032Z",
+      "updatedAt": "2026-11-06T07:13:56.032Z"
+    },
+    {
+      "_id": "mem_1793949236032_q5n1x",
+      "employeeId": "ADM001",
+      "employeeName": "Dr. Rajesh Sharma",
+      "date": "2026-11-06",
+      "checkInTime": "09:00 AM",
+      "checkOutTime": "--:--",
+      "status": "Present",
+      "remarks": "Standard check-in",
+      "createdAt": "2026-11-06T07:13:56.032Z",
+      "updatedAt": "2026-11-06T07:13:56.032Z"
+    }
+  ],
+  "leaves": [
+    {
+      "_id": "mem_1793949236032_z1zzp",
+      "employeeId": "EMP101",
+      "employeeName": "Aarav Patel",
+      "leaveType": "Casual Leave",
+      "startDate": "2026-11-12",
+      "endDate": "2026-11-13",
+      "numberOfDays": 2,
+      "reason": "Attending sibling graduation ceremony in hometown.",
+      "status": "Approved",
+      "reviewedBy": "Priya Iyer",
+      "comments": "Approved. Please coordinate task handover before leaving.",
+      "createdAt": "2026-11-06T07:13:56.032Z",
+      "updatedAt": "2026-11-06T07:13:56.032Z"
+    },
+    {
+      "_id": "mem_1793949236032_gpb2l",
+      "employeeId": "EMP102",
+      "employeeName": "Ananya Deshmukh",
+      "leaveType": "Sick Leave",
+      "startDate": "2026-11-18",
+      "endDate": "2026-11-19",
+      "numberOfDays": 2,
+      "reason": "Scheduled dental procedure and recovery.",
+      "status": "Pending",
+      "reviewedBy": "Pending",
+      "comments": "",
+      "createdAt": "2026-11-06T07:13:56.032Z",
+      "updatedAt": "2026-11-06T07:13:56.032Z"
+    },
+    {
+      "_id": "mem_1793949236033_st7z6",
+      "employeeId": "EMP103",
+      "employeeName": "Rohan Verma",
+      "leaveType": "Earned Leave",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-08",
+      "numberOfDays": 5,
+      "reason": "Annual family vacation trip.",
+      "status": "Approved",
+      "reviewedBy": "Dr. Rajesh Sharma",
+      "comments": "Enjoy your vacation.",
+      "createdAt": "2026-11-06T07:13:56.033Z",
+      "updatedAt": "2026-11-06T07:13:56.033Z"
+    }
+  ],
+  "performances": [
+    {
+      "_id": "mem_1793949236033_unfls",
+      "employeeId": "EMP101",
+      "employeeName": "Aarav Patel",
+      "reviewPeriod": "Q3 2026",
+      "rating": 5,
+      "keyAchievements": "Successfully delivered the REST API authentication module and overhauled the UI with 100% responsiveness.",
+      "areasOfImprovement": "Enhance automated unit test coverage for edge cases.",
+      "reviewerName": "Dr. Rajesh Sharma",
+      "feedback": "Outstanding technical initiative, teamwork, and reliable milestone deliveries.",
+      "createdAt": "2026-11-06T07:13:56.033Z",
+      "updatedAt": "2026-11-06T07:13:56.033Z"
+    },
+    {
+      "_id": "mem_1793949236033_ucnzb",
+      "employeeId": "EMP102",
+      "employeeName": "Ananya Deshmukh",
+      "reviewPeriod": "Q3 2026",
+      "rating": 4,
+      "keyAchievements": "Revamped the frontend component library and improved page load accessibility.",
+      "areasOfImprovement": "Deepen backend integration knowledge.",
+      "reviewerName": "Priya Iyer",
+      "feedback": "Consistent output and high-quality UI design implementations.",
+      "createdAt": "2026-11-06T07:13:56.033Z",
+      "updatedAt": "2026-11-06T07:13:56.033Z"
+    }
+  ],
+  "announcements": [
+    {
+      "_id": "mem_1793949236033_mcrc9",
+      "title": "Company All-Hands Meeting & Q4 Roadmap Review",
+      "content": "Our quarterly organizational all-hands and product roadmap session is scheduled for Monday at 10:00 AM. Please ensure your department updates are submitted.",
+      "priority": "Urgent",
+      "author": "Executive HR Team",
+      "date": "2026-11-06",
+      "createdAt": "2026-11-06T07:13:56.033Z",
+      "updatedAt": "2026-11-06T07:13:56.033Z"
+    },
+    {
+      "_id": "mem_1793949236033_xq2vl",
+      "title": "Annual Corporate Wellness & Health Checkup",
+      "content": "Complimentary full-body wellness and health screening scheduled for this Friday from 10:00 AM to 4:00 PM in Conference Center B.",
+      "priority": "Important",
+      "author": "Priya Iyer (HR)",
+      "date": "2026-11-06",
+      "createdAt": "2026-11-06T07:13:56.033Z",
+      "updatedAt": "2026-11-06T07:13:56.033Z"
+    },
+    {
+      "_id": "mem_1793949236033_10w70",
+      "title": "Tech Fest Hackathon Registration Open",
+      "content": "Registrations are now open for inter-departmental innovation hackathon. Grand prize includes tech merchandise and mentorship.",
+      "priority": "Normal",
+      "author": "Engineering Dept",
+      "date": "2026-11-06",
+      "createdAt": "2026-11-06T07:13:56.033Z",
+      "updatedAt": "2026-11-06T07:13:56.033Z"
+    }
+  ]
+}

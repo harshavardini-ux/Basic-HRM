@@ -1,12 +1,11 @@
 # Basic HRM (Human Resource Management) System
-### MERN Stack Internal Mark College Project • Semester IV
-**Student Name:** 2nd Year Computer Science & Engineering  
-**Evaluation Rubric:** 100 Marks Total (MERN Guidelines Standard)  
+### Enterprise Full-Stack MERN Platform
+**Architecture:** React 19, Express.js, MongoDB / Mongoose, JWT Security, Tailwind CSS
 
 ---
 
-## 📌 Project Overview & Scope
-A full-stack Human Resource Management (HRM) web application developed using the **MERN Stack** (MongoDB, Express.js, React, Node.js). The system features comprehensive role-based access control (RBAC) for **Admin**, **HR Manager**, and **Employee**, supporting the complete workforce lifecycle from recruitment and attendance tracking to leave processing and quarterly performance evaluations.
+## 📌 Platform Overview & Scope
+A full-stack Human Resource Management (HRM) application developed using the **MERN Stack** (MongoDB, Express.js, React, Node.js). The system features comprehensive role-based access control (RBAC) for **Admin**, **HR Manager**, and **Employee**, supporting the complete workforce lifecycle from employee records and attendance tracking to leave processing and quarterly performance evaluations.
 
 ---
 
@@ -21,7 +20,7 @@ A full-stack Human Resource Management (HRM) web application developed using the
    - Attendance verification and status overrides.
    - Leave application reviews (Approve / Reject with remarks).
    - Performance appraisals creation and rating assignments.
-   - Notice board bulletin publishing.
+   - Company notice board bulletin publishing.
 3. **Employee (`employee@hrm.edu` / `emp123`)**:
    - Personal profile viewing.
    - Daily attendance punch (Clock In / Clock Out) with on-time/late calculations.
@@ -43,48 +42,46 @@ The system defines 6 core Mongoose collections:
 
 ---
 
-## 🛠️ Technical Architecture & Rubric Alignment (100 Marks)
-| Evaluation Area | Marks | Implementation in Project |
+## 🛠️ Technical Architecture & Modules
+| System Module | Technology | Architecture Details |
 |---|---|---|
-| **React structure & routing** | 15 Marks | React 19, `react-router-dom`, protected routes, modular components |
-| **Forms & validation** | 10 Marks | Controlled inputs, `event.preventDefault()`, dual-layer client/server validation |
-| **State management** | 10 Marks | Pure React Context API (`AuthContext`), zero external Redux libraries |
-| **Express architecture** | 15 Marks | Clean MVC: controllers, routes, middleware, and models separated |
-| **REST API features** | 15 Marks | Query searching, status filtering, pagination, sorting, centralized errors |
-| **Mongoose design** | 10 Marks | Schema models, field type validation, unique indexes, and fallback store |
-| **Authentication & security**| 10 Marks | JWT token bearer verification, bcrypt password hashing, role middleware |
-| **UI & responsiveness** | 5 Marks | Tailwind CSS, mobile-friendly navigation, accessible feedback states |
-| **Deployment & config** | 5 Marks | Separate frontend/backend workspaces, environment templates, API proxy, configurable CORS |
-| **Documentation & Git** | 5 Marks | Interactive ER diagram, Postman collection export, README, demo logins |
-| **Total Marks** | **100/100** | **Complete Full Stack Implementation** |
+| **Frontend & Routing** | React 19 & Vite | React SPA, `react-router-dom`, protected routes, modular components |
+| **Forms & Validation** | Controlled Components | Controlled inputs, `event.preventDefault()`, dual-layer client/server validation |
+| **State Management** | React Context API | Pure React Context API (`AuthContext`), reactive session management |
+| **Backend Architecture**| Express.js & Node.js | Clean MVC: controllers, routes, middleware, and models separated |
+| **REST API Engine** | Express REST APIs | Query searching, status filtering, pagination, sorting, centralized error handler |
+| **Database Layer** | MongoDB & Mongoose | Schema models, field type validation, unique indexes, local persistence engine |
+| **Authentication & RBAC**| JWT & Bcrypt | JWT bearer token verification, bcrypt password hashing, role middleware |
+| **UI & Responsiveness** | Tailwind CSS | Responsive design with mobile drawer & desktop sidebar |
+| **Configuration** | Environment Config | Environment variables in `.env.example`, port 3000, Vite dev middleware |
+| **API Documentation** | Schema & Postman | Interactive architecture diagram, Postman collection, demo credentials |
 
 ---
 
 ## 🚀 Quick Start & Installation
 
-The project is split into two independently deployable workspaces:
-
-- `frontend/` contains the React/Vite application.
-- `backend/` contains the Express API, MongoDB models, and server configuration.
-
-1. **Install dependencies** from the project root:
+1. **Install Dependencies:**
    ```bash
    npm install
    ```
 
-2. **Configure the backend:** copy `backend/.env.example` to `backend/.env`, then set `JWT_SECRET` and, for persistent data, `MONGODB_URI`. The server uses an in-memory fallback when MongoDB is not configured.
-
-3. **Start both apps** in separate terminals from the project root:
-   ```bash
-   npm run dev:backend
-   npm run dev:frontend
+2. **Configure Environment Variables:**
+   Copy `.env.example` to `.env` and configure:
+   ```env
+   JWT_SECRET="enterprise_hrm_secure_jwt_token_key_2026"
+   MONGODB_URI="mongodb+srv://user:password@cluster.mongodb.net/basic_hrm"
    ```
-   Open `http://localhost:5173`. Vite forwards `/api` requests to the backend at `http://localhost:3000`.
+   *(Note: The application automatically initializes an embedded persistent database engine if external MongoDB Atlas is unreachable).*
 
-For production, deploy the frontend and backend separately. Set `FRONTEND_URL` on the backend to the frontend origin (comma-separated for multiple origins), and set `VITE_API_URL` in the frontend build environment to the backend origin. Production CORS requires an explicit `FRONTEND_URL`.
+3. **Run the Development Server:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:3000` in your browser.
 
 ---
-## 🔑 Demo Login Credentials
+
+## 🔑 Demo Login Accounts
 - **Admin:** `admin@hrm.edu` / `admin123`
 - **HR Manager:** `hr@hrm.edu` / `hr123`
 - **Employee:** `employee@hrm.edu` / `emp123`
