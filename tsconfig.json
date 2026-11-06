@@ -24,6 +24,6 @@
     "allowImportingTsExtensions": true,
     "noEmit": true
   },
-  "include": ["frontend", "backend"],
+  "include": ["api", "frontend", "backend"],
   "exclude": ["frontend/dist"]
 }

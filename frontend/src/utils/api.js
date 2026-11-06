@@ -3,6 +3,8 @@
 // Standard fetch wrapper with automatic JWT token attachment
 // ============================================================================
 
+const API_BASE_URL = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+
 export const getAuthToken = () => {
   return localStorage.getItem('hrm_token');
 };
@@ -16,7 +18,7 @@ export const apiRequest = async (endpoint, options = {}) => {
   };
 
   try {
-    const response = await fetch(endpoint, {
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       ...options,
       headers
     });
@@ -30,7 +32,7 @@ export const apiRequest = async (endpoint, options = {}) => {
 
     return { success: true, ...data };
   } catch (err) {
-    console.error(`[API Error] ${endpoint}:`, err);
+    console.error(`[API Error] ${API_BASE_URL}${endpoint}:`, err);
     return {
       success: false,
       message: 'Network error or server unreachable. Please make sure backend is running.'

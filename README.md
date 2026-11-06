@@ -84,6 +84,14 @@ The system defines 6 core Mongoose collections:
    ```
    Open `http://localhost:3000` in your browser.
 
+## ☁️ Deploying to Vercel
+
+1. In Vercel, set **Root Directory** to `frontend`.
+2. Use build command `npm run build` and output directory `dist` (configured in `frontend/vercel.json`).
+3. Add `VITE_API_URL` as a Vercel environment variable. Set it to the base URL of your separately hosted backend, for example `https://your-backend.example.com` (no trailing slash or `/api`).
+4. Configure `MONGODB_URI` and `JWT_SECRET` on your backend hosting provider, not Vercel. Use a cloud-accessible MongoDB connection string; never use `localhost` in production.
+5. Deploy the frontend from the `frontend` directory. Its dependencies and scripts are defined in `frontend/package.json`. The backend must be deployed separately and allow requests from your Vercel site.
+
 ---
 
 ## 🔑 Demo Login Accounts
