@@ -35,8 +35,10 @@ export const register = async (req, res) => {
       });
     }
 
+    const normalizedEmail = email.toLowerCase().trim();
+
     // 2. Check if user already exists
-    const existingUser = await User.findOne({ email: email.toLowerCase() });
+    const existingUser = await User.findOne({ email: normalizedEmail });
     if (existingUser) {
       return res.status(400).json({
         success: false,
@@ -55,7 +57,8 @@ export const register = async (req, res) => {
     // 5. Create User
     const user = await User.create({
       name: name.trim(),
-      email: email.toLowerCase().trim(),
+      username: normalizedEmail,
+      email: normalizedEmail,
       password: hashedPassword,
       role,
       department,
@@ -67,7 +70,7 @@ export const register = async (req, res) => {
       await Employee.create({
         employeeId,
         fullName: name.trim(),
-        email: email.toLowerCase().trim(),
+        email: normalizedEmail,
         phone: '9876543210',
         department,
         designation: role === 'HR Manager' ? 'HR Specialist' : 'Software Engineer',
@@ -191,42 +194,65 @@ export const getProfile = async (req, res) => {
 export const seedInitialData = async (req, res) => {
   try {
     const existingUsers = await User.find();
-    if (existingUsers.length > 0 && req.query.force !== 'true') {
-      return res.json({ success: true, message: 'Data already initialized.' });
+    const demoAccounts = [
+      {
+        name: 'Dr. Rajesh Sharma (Admin)',
+        username: 'admin@hrm.edu',
+        email: 'admin@hrm.edu',
+        password: 'admin123',
+        role: 'Admin',
+        department: 'Management',
+        employeeId: 'ADM001'
+      },
+      {
+        name: 'Priya Iyer (HR Lead)',
+        username: 'hr@hrm.edu',
+        email: 'hr@hrm.edu',
+        password: 'hr123',
+        role: 'HR Manager',
+        department: 'Human Resources',
+        employeeId: 'HRM001'
+      },
+      {
+        name: 'Aarav Patel (Developer)',
+        username: 'employee@hrm.edu',
+        email: 'employee@hrm.edu',
+        password: 'emp123',
+        role: 'Employee',
+        department: 'Engineering',
+        employeeId: 'EMP101'
+      }
+    ];
+
+    for (const account of demoAccounts) {
+      const { password, ...profile } = account;
+      const existingUser = await User.findOne({ email: account.email });
+      const passwordIsCurrent = existingUser
+        ? await bcrypt.compare(password, existingUser.password)
+        : false;
+      const profileIsCurrent = existingUser
+        && existingUser.name === profile.name
+        && existingUser.role === profile.role
+        && existingUser.department === profile.department
+        && existingUser.username === profile.username
+        && existingUser.employeeId === profile.employeeId;
+
+      if (!existingUser || !passwordIsCurrent || !profileIsCurrent) {
+        const salt = await bcrypt.genSalt(10);
+        const passwordHash = await bcrypt.hash(password, salt);
+        const userData = { ...profile, password: passwordHash };
+
+        if (existingUser) {
+          await User.findByIdAndUpdate(existingUser._id || existingUser.id, userData);
+        } else {
+          await User.create(userData);
+        }
+      }
     }
 
-    const salt = await bcrypt.genSalt(10);
-    const adminPass = await bcrypt.hash('admin123', salt);
-    const hrPass = await bcrypt.hash('hr123', salt);
-    const empPass = await bcrypt.hash('emp123', salt);
-
-    // 1. Seed Users
-    const u1 = await User.create({
-      name: 'Dr. Rajesh Sharma (Admin)',
-      email: 'admin@hrm.edu',
-      password: adminPass,
-      role: 'Admin',
-      department: 'Management',
-      employeeId: 'ADM001'
-    });
-
-    const u2 = await User.create({
-      name: 'Priya Iyer (HR Lead)',
-      email: 'hr@hrm.edu',
-      password: hrPass,
-      role: 'HR Manager',
-      department: 'Human Resources',
-      employeeId: 'HRM001'
-    });
-
-    const u3 = await User.create({
-      name: 'Aarav Patel (Developer)',
-      email: 'employee@hrm.edu',
-      password: empPass,
-      role: 'Employee',
-      department: 'Engineering',
-      employeeId: 'EMP101'
-    });
+    if (existingUsers.length > 0 && req.query.force !== 'true') {
+      return res.json({ success: true, message: 'Demo accounts verified; existing data preserved.' });
+    }
 
     // 2. Seed Departments
     await Department.create({
