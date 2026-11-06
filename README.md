@@ -54,7 +54,7 @@ The system defines 6 core Mongoose collections:
 | **Mongoose design** | 10 Marks | Schema models, field type validation, unique indexes, and fallback store |
 | **Authentication & security**| 10 Marks | JWT token bearer verification, bcrypt password hashing, role middleware |
 | **UI & responsiveness** | 5 Marks | Tailwind CSS, mobile-friendly navigation, accessible feedback states |
-| **Deployment & config** | 5 Marks | Environment variables in `.env.example`, port 3000, Vite dev middleware |
+| **Deployment & config** | 5 Marks | Separate frontend/backend workspaces, environment templates, API proxy, configurable CORS |
 | **Documentation & Git** | 5 Marks | Interactive ER diagram, Postman collection export, README, demo logins |
 | **Total Marks** | **100/100** | **Complete Full Stack Implementation** |
 
@@ -62,27 +62,28 @@ The system defines 6 core Mongoose collections:
 
 ## 🚀 Quick Start & Installation
 
-1. **Install Dependencies:**
+The project is split into two independently deployable workspaces:
+
+- `frontend/` contains the React/Vite application.
+- `backend/` contains the Express API, MongoDB models, and server configuration.
+
+1. **Install dependencies** from the project root:
    ```bash
    npm install
    ```
 
-2. **Configure Environment Variables:**
-   Copy `.env.example` to `.env` and configure:
-   ```env
-   JWT_SECRET="college_internal_hrm_project_secret_key_2026"
-   MONGODB_URI="mongodb+srv://student:student123@cluster0.example.mongodb.net/basic_hrm"
-   ```
-   *(Note: The application automatically initializes an embedded fallback database if MongoDB Atlas is not provided).*
+2. **Configure the backend:** copy `backend/.env.example` to `backend/.env`, then set `JWT_SECRET` and, for persistent data, `MONGODB_URI`. The server uses an in-memory fallback when MongoDB is not configured.
 
-3. **Run the Development Server:**
+3. **Start both apps** in separate terminals from the project root:
    ```bash
-   npm run dev
+   npm run dev:backend
+   npm run dev:frontend
    ```
-   Open `http://localhost:3000` in your browser.
+   Open `http://localhost:5173`. Vite forwards `/api` requests to the backend at `http://localhost:3000`.
+
+For production, deploy the frontend and backend separately. Set `FRONTEND_URL` on the backend to the frontend origin (comma-separated for multiple origins), and set `VITE_API_URL` in the frontend build environment to the backend origin. Production CORS requires an explicit `FRONTEND_URL`.
 
 ---
-
 ## 🔑 Demo Login Credentials
 - **Admin:** `admin@hrm.edu` / `admin123`
 - **HR Manager:** `hr@hrm.edu` / `hr123`
